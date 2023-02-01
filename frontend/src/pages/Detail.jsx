@@ -48,9 +48,10 @@ function Detail() {
                 image={newData.image}
                 id={newData._id}
                 description={newData.description}
+                button={true}
             />
             }
-            <button>edit</button>
+
             <BackButton />
         </div>
     )
