@@ -1,0 +1,8 @@
+.BackButton {
+    font-size: 2rem;
+    margin-left: 2rem;
+}
+
+.BackButton:hover {
+    cursor: pointer;
+}
