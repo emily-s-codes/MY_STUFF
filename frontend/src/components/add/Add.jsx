@@ -1,4 +1,5 @@
 import { useState } from "react";
+import UploadImages from "../uploadedImages/UploadImages";
 import "./Add.css"
 
 //Hole den useState von der Stuff Seite. Wenn ich sie hier verändere, wird die STuff Seite
@@ -33,7 +34,7 @@ function Add({ setUpdatePage, updatePage }) {
                 <input name="size" type="text" placeholder="Size" />
                 <input name="description" type="textfield" placeholder="ADD TEXT" />
 
-
+                {/* <UploadImages /> */}
                 <div>
                     <p id="image">Choose Image:  </p>
                     <input name="" id="image" type="file" />
