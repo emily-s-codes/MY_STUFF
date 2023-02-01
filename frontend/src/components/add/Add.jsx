@@ -2,9 +2,9 @@ import { useState } from "react";
 import UploadImages from "../uploadedImages/UploadImages";
 import "./Add.css"
 
-
-function Add() {
-    const [showUser, setShowUser] = useState(false);
+//Hole den useState von der Stuff Seite. Wenn ich sie hier verändere, wird die STuff Seite
+//neu gerendert
+function Add({ setUpdatePage, updatePage }) {
 
     const submit = (event) => {
         event.preventDefault();
@@ -17,10 +17,11 @@ function Add() {
             })
             .then((response) => {
                 if (response.ok) {
-                    setShowUser(true)
+                    setUpdatePage(true);
                 }
 
             })
+
     }
 
 
@@ -40,7 +41,7 @@ function Add() {
                 </div>
                 <input type="submit" value="Send" />
             </form>
-            {showUser && <p>Success</p>
+            {updatePage && <p>Success</p>
             }
         </div>
     )

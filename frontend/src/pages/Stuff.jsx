@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Add from "../components/add/Add";
+import BackButton from "../components/backButton/BackButton.jsx";
 import ItemCard from "../components/intemCard/ItemCard";
 
 
@@ -18,6 +19,7 @@ function Stuff() {
     console.log(params);
 
     const [newData, setNewData] = useState();
+    const [updatePage, setUpdatePage] = useState(false);
 
     useEffect(() => {
         async function getData() {
@@ -28,11 +30,10 @@ function Stuff() {
             setNewData(umgewandelt)
             //Wegen await wird der Code danach erst ausgeführt, wenn der Fetch fertig ist. Davor steht in data einfach nur das Promise Objekt
             console.log(umgewandelt);
-
         }
 
         getData();
-    }, [params.stuff])
+    }, [params.stuff, updatePage])
 
     // Anfangsbuchstaben groß und Rest klein
     let size = params.stuff.slice(0, 1).toUpperCase() + params.stuff.slice(1);
@@ -40,7 +41,7 @@ function Stuff() {
     return (
         <section className="Stuff">
 
-            <h1>{size} Page</h1>
+            {/* <h1>{size} Page</h1> */}
             <div className="allStuff">
                 <article>
                     {newData?.map((object, index) => {
@@ -57,9 +58,13 @@ function Stuff() {
                         )
 
                     })}
+
                 </article>
-                <Add />
+                <Add
+                    setUpdatePage={setUpdatePage}
+                    updatePage={updatePage} />
             </div>
+            <BackButton />
         </section>
     )
 }

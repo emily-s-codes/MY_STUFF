@@ -63,7 +63,10 @@
 }
 
 
-
+.allStuff article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 
 .allStuff a {
     text-decoration: none;
@@ -91,4 +94,11 @@
 /* description p */
 .Detail .ItemCard article p:nth-of-type(3) {
     margin-top: 2rem;
+}
+
+.edit {
+    margin-top: 2rem;
+    width: 20%;
+    align-self: flex-end;
+    padding: 0.2rem 0.5rem;
 }
