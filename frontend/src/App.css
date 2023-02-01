@@ -63,7 +63,10 @@
 }
 
 
-
+.allStuff article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 
 .allStuff a {
     text-decoration: none;

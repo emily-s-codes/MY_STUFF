@@ -41,7 +41,7 @@ function Stuff() {
     return (
         <section className="Stuff">
 
-            <h1>{size} Page</h1>
+            {/* <h1>{size} Page</h1> */}
             <div className="allStuff">
                 <article>
                     {newData?.map((object, index) => {
@@ -58,12 +58,13 @@ function Stuff() {
                         )
 
                     })}
-                    <BackButton />
+
                 </article>
                 <Add
                     setUpdatePage={setUpdatePage}
                     updatePage={updatePage} />
             </div>
+            <BackButton />
         </section>
     )
 }
