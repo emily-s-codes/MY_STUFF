@@ -1,0 +1,16 @@
+.StuffCard {
+    text-decoration: none;
+    color: black;
+    margin-top: 4rem;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+.StuffCard:hover {
+    transform: scale(1.1);
+}
+
+
+.StuffCard img {
+    border-radius: 2rem;
+}

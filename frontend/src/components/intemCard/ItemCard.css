@@ -1,0 +1,19 @@
+.ItemCard {
+    /* display: flex; */
+    margin: 2rem 2rem;
+    border: 1.5px rgba(220, 219, 219, 0.991) solid;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ItemCard:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.ItemCard article {
+    margin: 1rem;
+    text-align: center;
+}

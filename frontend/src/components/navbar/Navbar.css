@@ -1,0 +1,19 @@
+.Navbar {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    padding-right: 4rem;
+    padding: 1.5rem;
+    background-color: rgba(157, 159, 162, 0.443);
+}
+
+.Navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.Navbar .active {
+    background-color: #fff0da;
+}

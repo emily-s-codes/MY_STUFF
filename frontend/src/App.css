@@ -1,0 +1,94 @@
+@font-face {
+    font-family: Literata;
+    src: url("./assets//fonts/Literata_36pt-Medium.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Literata;
+}
+
+.Home {
+    text-align: center;
+}
+
+.Home section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.furniture {
+    position: relative;
+    background-image: url("https://unsplash.it/300/300?4");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5rem;
+}
+
+.furniture::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    opacity: 0.4;
+}
+
+.furniture h1 {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+/* ---- Big Page --------*/
+.Big img {
+    width: 14%;
+}
+
+
+
+
+.allStuff {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+
+.allStuff a {
+    text-decoration: none;
+    color: black
+}
+
+/* Karte auf Detailseite */
+.Detail .ItemCard {
+    background-color: #fff0da;
+    display: flex;
+    width: 50%;
+    margin: 3rem auto;
+}
+
+.Detail .ItemCard article {
+    text-align: left;
+
+}
+
+/* room p */
+.Detail .ItemCard article p:nth-of-type(1) {
+    margin-top: 1rem;
+}
+
+/* description p */
+.Detail .ItemCard article p:nth-of-type(3) {
+    margin-top: 2rem;
+}
