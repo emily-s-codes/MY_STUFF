@@ -1,4 +1,5 @@
 import { useState } from "react";
+import UploadImages from "../uploadedImages/UploadImages";
 import "./Add.css"
 
 
@@ -32,7 +33,7 @@ function Add() {
                 <input name="size" type="text" placeholder="Size" />
                 <input name="description" type="textfield" placeholder="ADD TEXT" />
 
-
+                {/* <UploadImages /> */}
                 <div>
                     <p id="image">Choose Image:  </p>
                     <input name="" id="image" type="file" />
