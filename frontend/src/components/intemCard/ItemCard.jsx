@@ -10,7 +10,6 @@ function ItemCard(props) {
                 <p>{props.room}</p>
                 <p>{props.size}</p>
                 <p>{props.description}</p>
-
             </article>
         </div>
     )
