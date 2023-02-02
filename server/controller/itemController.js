@@ -20,7 +20,6 @@ export const getSingleItem = async (req, res) => {
     catch (error) {
         console.log(error);
     }
-
 }
 
 export const addSingleItem = async (req, res) => {
@@ -47,9 +46,12 @@ export const updateSingleItem = (req, res) => {
 }
 
 export const deleteSingleItem = (req, res) => {
+    //Holt das params Objekt und dann das item aus der URL: /api/item/:item'
     const params = req.params.item
     getDb()
+        //löscht das Objekt mit der ID, dass wir in params haben
         .then(db => db.collection('moebel').deleteOne({ "_id": ObjectId(params) }))
-        .then(result => res.status(200).json(result))
+        //schickt bei Erfolg Status 200, sonst Error in der Konsole ausgeben
+        .then(result => res.status(200))
         .catch(err => console.log(err))
 }
