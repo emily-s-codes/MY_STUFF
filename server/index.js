@@ -40,11 +40,8 @@ app.get('/', (req, res) => {
 app.get('/api/size/:size', getItemsBySize)
 //Alles was mit einem einzelenen Item zu tun hat
 app.get('/api/item/:item', getSingleItem)
-app.post('/api/add', upload, addSingleItem)
 app.put('/api/item/:item', upload, updateSingleItem)
-app.delete('/api/item/:item', deleteSingleItem)
 app.post('/api/add', upload, addSingleItem)
-app.put('/api/item/:item', upload, updateSingleItem)
 app.delete('/api/item/:item', deleteSingleItem)
 
 // dann werfen wir den Server mal an

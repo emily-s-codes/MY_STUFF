@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemCard from "../components/intemCard/ItemCard"
 import BackButton from "../components/backButton/BackButton.jsx"
+
 function Detail() {
 
     const params = useParams(); //Hole die ID von der URL
@@ -12,6 +13,7 @@ function Detail() {
 
 
     const [newData, setNewData] = useState();
+
     useEffect(() => {
         async function getData() {
             //Fake API zunächst genommen
@@ -23,7 +25,6 @@ function Detail() {
         }
         getData();
     }, [])
-
 
 
 
@@ -49,6 +50,8 @@ function Detail() {
                 id={newData._id}
                 description={newData.description}
                 button={true}
+
+
             />
             }
 
