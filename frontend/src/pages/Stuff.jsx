@@ -20,6 +20,7 @@ function Stuff() {
 
     const [newData, setNewData] = useState();
     const [updatePage, setUpdatePage] = useState(false);
+    const [edit, setEdit] = useState(false)
 
     useEffect(() => {
         async function getData() {
@@ -53,7 +54,9 @@ function Stuff() {
                                     // size={object.size}
                                     image={object.image}
                                     id={object._id}
+                                    setEdit={setEdit}
                                 />
+
                             </Link>
                         )
 
@@ -70,3 +73,22 @@ function Stuff() {
 }
 
 export default Stuff
+
+// {edit && <div className="Add">
+//                                     <h1>ADD NEW ITEM</h1>
+//                                     <form onSubmit={submit}>
+//                                         <input name="title" type="text" placeholder={object.title} />
+//                                         <input name="room" type="text" placeholder={object.room} />
+//                                         <input name="size" type="text" placeholder={object.size} />
+//                                         <input name="description" type="textfield" placeholder={object.description} />
+
+//                                         {/* <UploadImages /> */}
+//                                         <div>
+//                                             <p id="image">Choose Image:  </p>
+//                                             <input name="" id="image" type="file" />
+//                                         </div>
+//                                         <input type="submit" value="Send" />
+//                                     </form>
+//                                     {updatePage && <p>Success</p>
+//                                     }
+//                                 </div>}

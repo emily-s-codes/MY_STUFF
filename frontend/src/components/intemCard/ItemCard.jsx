@@ -27,11 +27,16 @@ function ItemCard(props) {
                 <p>{props.room}</p>
                 <p>{props.size}</p>
                 <p>{props.description}</p>
+
                 {/* Wenn man auf den Button klickt, soll der Fetch auf die DELETE Route erfolgen und diese Daten löschen */}
                 {props.button && <button onClick={deleteData} className="edit">delete</button>}
+
+                {props.button && <button className="edit" >edit</button>}
+
             </article>
         </div>
     )
 }
 
 export default ItemCard
+// onClick={() => props.setEdit(prev => !prev)}
