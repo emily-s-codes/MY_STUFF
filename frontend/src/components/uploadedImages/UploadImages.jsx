@@ -16,26 +16,32 @@ var IdentityPoolId = import.meta.env.IDENTITY_POOL_ID;
 //     params: { Bucket: albumBucketName }
 // });
 
-
-
 const UploadImages = () => {
-    const config = {
-        bucketName: albumBucketName,
-        region: bucketRegion,
-        credentials: new AWS.CognitoIdentityCredentials({
-            IdentityPoolId: IdentityPoolId
+
+    const onSelectFile = async (e) => {
+        const file = e.target.files[0]
+        const convertedFile = await convertToBase64(file)
+
+        const s3URL = await fetch(`${import.meta.env.VITE_BASE_URL}api/uploadphoto`, {
+            image: convertedFile,
+            imageName: file.name
         })
     }
 
-    const uploadImage = (e) => {
-        S3FileUpload.uploadFile(e.target.files[0], config)
-            .then(data => console.log(data.location))
-            .catch(err => alert(err))
+    const convertToBase64 = (file) => {
+        return new Promise(resolve => {
+            const reader = new FileReader()
+
+            reader.readAsDataURL(file)
+            reader.onload = () => {
+                resolve(reader.result)
+            }
+        })
     }
 
     return (
         <>
-            <input type="file" onChange={uploadImage} />
+            <input type="file" accept="image/*" onChange={onSelectFile} />
         </>
     );
 }
