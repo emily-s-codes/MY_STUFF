@@ -31,7 +31,7 @@ function Add({ setUpdatePage, updatePage }) {
             <form onSubmit={submit}>
                 <input name="title" type="text" placeholder="TITEL" />
                 <input name="room" type="text" placeholder="ROOM" />
-                <input name="size" type="text" placeholder="Size" />
+                <input name="size" type="text" placeholder="SIZE" />
                 <input name="description" type="textfield" placeholder="ADD TEXT" />
 
                 {/* <UploadImages /> */}

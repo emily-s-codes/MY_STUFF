@@ -10,10 +10,11 @@ function ItemCard(props) {
                 <p>{props.room}</p>
                 <p>{props.size}</p>
                 <p>{props.description}</p>
-                {props.button && <button className="edit">edit</button>}
+                {props.button && <button className="edit" >edit</button>}
             </article>
         </div>
     )
 }
 
 export default ItemCard
+// onClick={() => props.setEdit(prev => !prev)}
