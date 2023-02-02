@@ -43,9 +43,21 @@ app.get('/api/item/:item', getSingleItem)
 app.post('/api/add', upload, addSingleItem)
 app.put('/api/item/:item', upload, updateSingleItem)
 app.delete('/api/item/:item', deleteSingleItem)
-app.post('/api/add', upload, addSingleItem)
-app.put('/api/item/:item', upload, updateSingleItem)
-app.delete('/api/item/:item', deleteSingleItem)
+
+app.post('/api/uploadphoto', async (req, res, next) => {
+    const base64Image = req.body.image
+    const imageName = req.body.name
+    const type = req.body.type
+    let response;
+
+    try {
+        response = await imagesService.upload(imageName, base64Image)
+    } catch (error) {
+        console.error('error uploading image', error.message)
+        return next(new Error('error uploading image', image.name))
+    }
+    res.send({ link: response })
+})
 
 // dann werfen wir den Server mal an
 app.listen(PORT, () => console.log('Server runs on Port:', PORT))
